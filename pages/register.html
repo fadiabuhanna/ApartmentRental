@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<style>
+		body {
+		  font-family: Arial, Helvetica, sans-serif;
+		  background: #222D32;
+    
+		}
+		
+		* {
+		  box-sizing: border-box;
+		}
+		
+		/* Add padding to containers */
+		.container {
+		  padding: 16px;
+		  background-color: white;
+		}
+		
+		/* Full-width input fields */
+		input[type=text], input[type=password] {
+		  width: 30%;
+		  padding: 10px;
+		  margin: 0px 0 5px 0;
+		  display: inline-block;
+		  border: none;
+		  background: #f1f1f1;
+		  
+		}
+		
+		.form-control-label {
+			color:gray;
+			font-size: 25px;	
+		}
+		
+		input[type=text]:focus, input[type=password]:focus {
+		  background-color: #ddd;
+		  outline: none;
+		}
+	
+		
+		/* Set a style for the submit button */
+		.registerbtn {
+		  background-color: #04AA6D;
+		  text-align: center;
+		  color: white;
+		  padding: 16px 20px;
+		  margin: 8px 0;
+		  border: none;
+		  cursor: pointer;
+		  width: 30%;
+		  opacity: 0.9;
+		  
+		}
+		
+		.registerbtn:hover {
+		  opacity: 1;
+		}
+		
+		/* Add a blue text color to links */
+		a {
+		  color: dodgerblue;
+		}
+		
+		/* Set a grey background color and center the text of the "sign in" section */
+		.signin {
+		  background-color: #f1f1f1;
+		  text-align: center;
+		}
+
+		.centers{
+			text-align: center;
+		}
+		h2{
+  
+			font-size: 50px;
+			font-family:initial;
+			color:lightslategrey;
+			}
+		.color_texts{
+  
+			font-size: 20px;
+			font-family:cursive;
+			color:beige;
+		}
+		</style>
+
+
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+
+</head>
+
+<body>
+	<div class="centers">
+		<h2>Regiser</h2>
+		<p class="color_texts">Please fill in this form to create an account</p>
+	  </div>
+	
+	<form method="POST" action="/account/register">
+		
+<script>
+	function validate() {
+		var Username = document.getElementById("username").value;
+	 	var pass = document.getElementById("myInputPasswordRegister").value;
+	 	var passconfirm = document.getElementById("myInputPasswordConfirmRegister").value;
+		if(Username == null || Username == "" || Username == " "){
+			alert("username is ERROR");
+			return false;
+ 		}
+
+		if(pass==null || pass==" " || pass=="" || passconfirm=="" || passconfirm==null || passconfirm==" "){
+			alert("the password or password confirm ERROR");
+			return false;
+		}
+		
+	 	if (pass!==passconfirm) {
+			alert("the password and passwordconfirm is not equal");
+			return false;
+ 		}
+		
+		alert("WELCOME");
+		return true;
+	} 
+</script>
+
+		<div class="centers">
+		<h3 class="form-control-label">username</h3>
+		<input type="text" placeholder="username" name="username" id="username">
+		<br>
+		<h3 class="form-control-label">Password</h3>
+		<input type="password" placeholder="password" name="password" id="myInputPasswordRegister" >
+		<br>
+		<input type="checkbox" onclick="FunctionPasswordRegister()" >Show Password
+		</div>
+
+		<script>
+			function FunctionPasswordRegister() {
+			  var pass = document.getElementById("myInputPasswordRegister");
+			  if (pass.type === "password") {
+				pass.type = "text";
+			  } else {
+				pass.type = "password";
+			  }
+			}
+		</script>
+		
+		<br>
+		<div class="centers">
+		<h3 class="form-control-label">password confirm </h3>
+		<label><input type="password" placeholder="passwordConfirm" name="passwordConfirm" id="myInputPasswordConfirmRegister"></label>
+		<span id='message'></span>
+		<br>
+		<input type="checkbox" onclick="FunctionPasswordConfirmRegister()">Show Password Confirm
+		</div>
+		
+		<script>
+			function FunctionPasswordConfirmRegister() {
+				var passConfirm = document.getElementById("myInputPasswordConfirmRegister");
+				if (passConfirm.type === "password") {
+					passConfirm.type = "text";
+				} else {
+					passConfirm.type = "password";
+				}
+			}
+			</script>
+
+		<br>
+
+		<div class="centers">
+		<button type = "submit" class="registerbtn" onclick="return validate();">Submit </button>
+		</div>
+
+		<div class="container signin">
+			<p>Already have an account? <a href="/account/login">Sign in</a>.</p>
+		  </div>
+	</form>
+
+</body>
+
+</html>
+
+
+
+
