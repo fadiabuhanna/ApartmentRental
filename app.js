@@ -1,6 +1,7 @@
 const express = require('express');
 const path = require('path');
-
+const dotenv = require('dotenv');
+dotenv.config();
 /*const cookieRouter = require("cookie-parser");*/
 const cookieParser = require('cookie-parser');
 const app = express();
@@ -10,7 +11,7 @@ const { read } = require('fs');
 const UserModel = require('./models/User');
 const accountRouter = require('./routes/account');
 
-mongoose.connect('mongodb://localhost:27017', {   
+mongoose.connect(process.env.MONGODB,{   
 
    dbName:'Apartment',
     auth:{
