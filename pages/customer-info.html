@@ -16,37 +16,12 @@
 	
 	
 	<form method="POST" action="/admin/customer-info">
-		<h3>Personal details:</h3>
-
-        <div class="form-group">
-			<label class="form-control-label">First Name</label>
-			<input type="text"  class="form-control-label" name="firstName" id="firstName">
-            <br>
-            <label class="form-control-label">Last Name</label>
-            <input type="text"  class="form-control-label"name="lastName" id="lastName">
-            <br>
-            <label class="form-control-label">ID</label>
-            <input type="number" class="form-control-label"  name="id" id="id">
-
-
-
-		</div>
+		
+		<h5><a href="/admin/login" class="btn btn-outline-primary">login</a></h5>
+	<h5><a href="/admin/register" class="btn btn-outline-primary">register</a></h5>
 
 	</form>	
-	<script type="text/javascript" defer>
-		async function main(){
-
-			const data =await fetch('/userinfoo').then(res=>res.json());
-			
-			document.getElementById("firstName").value = data.firstName || "";
-			document.getElementById("lastName").value = data.lastName || "";
-			document.getElementById("id").value = data.id || "";
-
 	
-		}
-		
-		main();
-		</script>
 </body>
 
 </html>

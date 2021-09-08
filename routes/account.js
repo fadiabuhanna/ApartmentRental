@@ -40,6 +40,9 @@ router.get("/register", (req, res) => {
 	
 });
 
+
+
+
 /** should handle register logic, log in the user, and redirect to homepage */
 router.post("/register", async (req, res) => {
 	

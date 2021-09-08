@@ -28,8 +28,8 @@ mongoose.connect(process.env.MONGODB,{
 
     dbName:'Apartment',
      auth:{
-         user:'root',
-         password:'example',
+         user:process.env.MONGODBUser,
+         password:process.env.MONGODBPassword,
          authdb: 'admin'
      },
      useCreateIndex: true,
@@ -37,6 +37,7 @@ mongoose.connect(process.env.MONGODB,{
      useUnifiedTopology: true
  
  });
+
 /*mongoose.connect(process.env.MONGODB,{   
 //'mongodb+srv://cluster0.2yz5r.mongodb.net?retryWrites=true&w=majority'
 //mongodb://localhost:27017
@@ -86,15 +87,6 @@ app.get('/userinfo',async (req,res)=>{
         EntryDate:user.EntryDate,
         ReleaseDate:user.ReleaseDate
 
-    })
-})
-
-app.get('/userinfoo',async (req,res)=>{
-    const user = await UserModel.findById(req.session.user._id).exec()
-    res.send({
-        firstName:user.firstName,
-        lastName:user.lastName,
-        id:user.id
     })
 })
 
