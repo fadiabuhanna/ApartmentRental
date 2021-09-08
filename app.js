@@ -117,4 +117,4 @@ app.post("/add-apartment",async (req,res)=>{
 app.get("/", (req, res) => res.sendFile(path.resolve("pages/index.html")))
 app.use("/", (req, res) => res.sendStatus(404));
 
-app.listen(3000);
+app.listen(process.env.PORT || 3000);
