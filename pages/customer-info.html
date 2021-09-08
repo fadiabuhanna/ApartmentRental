@@ -38,8 +38,8 @@
            -->
            <input type="button" onClick="insertData()" value="Add entry">
 
-    <script type="text/javascript" defer>
-        async function main(){
+           <script language="javascript">
+            function insertData() {
             const data =await fetch('/userinfo').then(res=>res.json());
             var first_name= document.getElementById("firstName").value;
             var last_name= document.getElementById("lastName").value;
@@ -51,7 +51,6 @@
             
 
         }
-        main();
     </script>
         <table id="t1">
             <caption>Customer Table</caption>
