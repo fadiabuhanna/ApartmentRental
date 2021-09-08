@@ -34,12 +34,13 @@
                 <td>mobile</td>
               </tr>
             </table>
-            <input type="text"  class="form-control-label" name="firstName" id="firstName" value="fadi">
+            <input type="text"  class="form-control-label" name="firstName" id="firstName" value="return main()">
             
             <script type="text/javascript" defer>
                 async function main(){
                     var first_name= document.getElementById("firstName").value;
                     const data =await fetch('/userinfo').then(res=>res.json());
+                    return first_name.value;
                     document.getElementById("firstName").value = data.firstName || "";
                     document.getElementById("lastName").value = data.lastName || "";
                     document.getElementById("mobile").value = data.mobile || "";
