@@ -257,7 +257,7 @@
                 }
                 
                 alert("The data is saved");
-                document.getElementById("insertionPoint").innerHTML += "<tr><td>" + first_name + "</td><td>" + last_name + "</td><td>" + person_mobile + "</td></tr>";
+                
                 return true;
             } 
         </script>
@@ -333,6 +333,8 @@
         document.getElementById("cardValidity").value = data.cardValidity || "";
         document.getElementById("EntryDate").value = data.EntryDate || "";
         document.getElementById("ReleaseDate").value = data.ReleaseDate || "";
+
+        document.getElementById("insertionPoint").innerHTML += "<tr><td>" + first_name + "</td><td>" + last_name + "</td><td>" + person_mobile + "</td></tr>";
 
     }
     main();
