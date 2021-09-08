@@ -181,13 +181,16 @@
 		<input type="checkbox" onclick="FunctionPasswordLogin()">
 		<script>
 			function FunctionPasswordLogin() {
-			  var x = document.getElementById("myInputPassword");
-			  if (x.type === "password") {
-				x.type = "text";
-			  } else {
-				x.type = "password";
+			  var inType = document.getElementById("myInputPassword");
+			  if (inType.type === "password") {
+				inType.type = "text";
+			  } 
+              else {
+				inType.type = "password";
 			  }
+              
 			}
+            
 			</script>
 			<br>
 			 <div >
