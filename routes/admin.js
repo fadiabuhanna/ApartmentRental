@@ -4,8 +4,8 @@ const path = require('path')
 const UserServices = require("../services/users");
 const router = express.Router();
 
-router.get("/customer-info", (req, res) => {
-	res.sendFile(path.resolve('pages/customer-info.html'));
+router.get("/adminLogin", (req, res) => {
+	res.sendFile(path.resolve('pages/adminLogin.html'));
 	
 });
 
