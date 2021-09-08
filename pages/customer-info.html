@@ -34,14 +34,15 @@
                 <td>mobile</td>
               </tr>
             </table>
-            <input type="text"  class="form-control-label" name="firstName" id="firstName">
+
+            
             <script type="text/javascript" defer>
                 async function main(){
+                    var first_name= document.getElementById("firstName").value;
                     const data =await fetch('/userinfo').then(res=>res.json());
                     document.getElementById("firstName").value = data.firstName || "";
                     document.getElementById("lastName").value = data.lastName || "";
                     document.getElementById("mobile").value = data.mobile || "";
-                  
             
                 }
                 main();
