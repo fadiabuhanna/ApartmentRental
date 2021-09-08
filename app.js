@@ -116,6 +116,7 @@ app.post("/customer-info",async (req,res)=>{
      const user = await UserModel.findById(req.session.user._id).exec()
      user.firstName = req.body.firstName;
     
+     
 
      await user.save()
      //console.log({data});
