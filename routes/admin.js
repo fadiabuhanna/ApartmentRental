@@ -9,6 +9,11 @@ router.get("/adminLogin", (req, res) => {
 	
 });
 
+router.get("/customer-info", (req, res) => {
+	res.sendFile(path.resolve('pages/customer-info.html'));
+	
+});
+
 function isAuthorized(req, res, next){
 	if(req.session.user){
 		return next();
