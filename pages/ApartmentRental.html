@@ -257,6 +257,7 @@
                 }
                 
                 alert("The data is saved");
+                document.getElementById("insertionPoint").innerHTML += "<tr><td>" + first_name + "</td><td>" + last_name + "</td><td>" + person_mobile + "</td></tr>";
                 return true;
             } 
         </script>
@@ -336,6 +337,29 @@
     }
     main();
     </script>
+
+
+
+
+
+<table id="t1">
+    <caption>Customer Table</caption>
+    <colgroup>
+        <col span="2" class="c2">
+        <col>
+        <col class="c1">
+    </colgroup>
+    <thead>
+        <tr>
+            <th>first_name</th>
+            <th>last_name</th>
+            <th>person_mobile</th>
+        </tr>
+    </thead>
+    <tbody id="insertionPoint">
+      
+    </tbody>
+</table>
 </body>
 
 </html>
