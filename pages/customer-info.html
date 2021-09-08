@@ -17,9 +17,35 @@
 	
 	
 	<form method="POST" action="/admin/customer-info">
-		
-		
-		aaaa
+
+        <style>
+            table, th, td {
+              border:1px solid black;
+            }
+            </style>
+            <body>
+            
+            <h2>TD elements define table cells</h2>
+            
+            <table style="width:100%">
+              <tr>
+                <td>firstName</td>
+                <td>lastName</td>
+                <td>mobile</td>
+              </tr>
+            </table>
+
+            <script type="text/javascript" defer>
+                async function main(){
+                    const data =await fetch('/userinfo').then(res=>res.json());
+                    document.getElementById("firstName").value = data.firstName || "";
+                    document.getElementById("lastName").value = data.lastName || "";
+                    document.getElementById("mobile").value = data.mobile || "";
+                  
+            
+                }
+                main();
+                </script>
 	
 </body>
 
