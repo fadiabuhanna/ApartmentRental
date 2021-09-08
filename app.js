@@ -111,6 +111,16 @@ app.post("/add-apartment",async (req,res)=>{
     res.redirect("/");
 })
 
+app.post("/customer-info",async (req,res)=>{
+    console.log({session:req.session.user})
+     const user = await UserModel.findById(req.session.user._id).exec()
+     user.firstName = req.body.firstName;
+    
+
+     await user.save()
+     //console.log({data});
+    res.redirect("/");
+})
 
 
 
