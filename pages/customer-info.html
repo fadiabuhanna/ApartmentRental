@@ -17,9 +17,15 @@
 	
 	
 	<form method="POST" action="/admin/customer-info">
-
+        <script type="text/javascript" defer>
+            async function main(){
+                const data =await fetch('/userinfo').then(res=>res.json());
+                document.getElementById("firstName").value = data
+            }
+            main();
+            </script>
         <script>
-             var tblClient = document.getElementById("tblClient");
+             /*var tblClient = document.getElementById("tblClient");
             for (var i = 0; i < 5; i++) {
                 var tr = document.createElement("tr");
                 tblClient.appendChild(tr);
@@ -27,7 +33,8 @@
                 tr.appendChild(document.createElement("td").appendChild(document.createTextNode(persons[i].lastName)));
                 tr.appendChild(document.createElement("td").appendChild(document.createTextNode(persons[i].celephone)));
 
-            }
+            }*/
+            
         </script>
 
 </body>
