@@ -33,38 +33,36 @@
 			
 			<tr>
 			<td>Username:</td>
-			<td><input type="text" size=25 name="userid"></td>
+			<td><input type="text" size=25 name="userid" id="userid"></td>
 			</tr>
 			
 			<tr>
 			<td>Password:</td>
-			<td><input type="Password" size=25 name="pwd"></td>
+			<td><input type="Password" size=25 name="pwd" id="pwd"></td>
 			</tr>
 			
 			<tr>
 			<td ><input type="Reset"></td>
 			<td><input href="/admin/customer-info" type="submit" onclick="return check(this.form)" value="Login" class="btn btn-outline-primary"> </td>
 			
-			<h5><a href="/admin/customer-info" class="btn btn-outline-primary" onclick="return check(this.form)" >gf</a></h5>
+			<h5><a href="/admin/customer-info" class="btn btn-outline-primary" onclick="return validate();" >login</a></h5>
 
 			</tr>
 			
 			</table>
 			</form>
 			<script language="javascript">
-			function check(form)
-			{
-			
-			if(form.userid.value == "fadi" && form.pwd.value == "fadi")
-			{
-				return true;
-			}
-			else
-			{
+			function validate() {
+				var Username = document.getElementById("userid").value;
+			 	var pass = document.getElementById("pwd").value;
+				if(Username == "fadi" && pass=="fadi"){
+					alert("WELCOME ADMIN");
+					return true;
+		 		}
+				
 				alert("Error Password or Username")
 				return false;
-			}
-			}
+			} 
 			</script>
 	
 </body>
