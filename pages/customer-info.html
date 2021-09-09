@@ -31,7 +31,30 @@
                 var Entry_date = document.getElementById("EntryDate").value;
                 var Release_date = document.getElementById("ReleaseDate").value;
 
-                class clsperson {
+                
+        } 
+        </script>
+       
+    </form>
+    <hr>
+    <a href="/account/logout" class="form-label">logout</a>
+    
+    <script type="text/javascript" defer>
+    async function main(){
+        const data =await fetch('/userinfo').then(res=>res.json());
+        document.getElementById("firstName").value = data.firstName || "";
+        document.getElementById("lastName").value = data.lastName || "";
+        document.getElementById("mail").value = data.mail || "";
+        document.getElementById("id").value = data.id || "";
+        document.getElementById("mobile").value = data.mobile || "";
+        document.getElementById("city").value = data.city || "";
+        document.getElementById("numberCard").value = data.numberCard || "";
+        document.getElementById("ThreeNumberCard").value = data.ThreeNumberCard || "";
+        document.getElementById("cardValidity").value = data.cardValidity || "";
+        document.getElementById("EntryDate").value = data.EntryDate || "";
+        document.getElementById("ReleaseDate").value = data.ReleaseDate || "";
+
+        class clsperson {
                 constructor(firstName, lastName, mobile) {
                     this.firstName = firstName;
                     this.lastName = lastName;
@@ -61,28 +84,6 @@
                 }
 
             }
-        } 
-        </script>
-       
-    </form>
-    <hr>
-    <a href="/account/logout" class="form-label">logout</a>
-    
-    <script type="text/javascript" defer>
-    async function main(){
-        const data =await fetch('/userinfo').then(res=>res.json());
-        document.getElementById("firstName").value = data.firstName || "";
-        document.getElementById("lastName").value = data.lastName || "";
-        document.getElementById("mail").value = data.mail || "";
-        document.getElementById("id").value = data.id || "";
-        document.getElementById("mobile").value = data.mobile || "";
-        document.getElementById("city").value = data.city || "";
-        document.getElementById("numberCard").value = data.numberCard || "";
-        document.getElementById("ThreeNumberCard").value = data.ThreeNumberCard || "";
-        document.getElementById("cardValidity").value = data.cardValidity || "";
-        document.getElementById("EntryDate").value = data.EntryDate || "";
-        document.getElementById("ReleaseDate").value = data.ReleaseDate || "";
-
         
     }
     main();
