@@ -21,21 +21,21 @@
 
                 var first_name= document.getElementById("firstName").value;
                 var last_name= document.getElementById("lastName").value;
-             	var person_mail = document.getElementById("mail").value.indexOf("@gmail.com");
-             	var person_id = document.getElementById("id").value.indexOf(9);
-                var person_mobile = document.getElementById("mobile").value.indexOf(9);
+             	var person_mail = document.getElementById("mail").value;
+             	var person_id = document.getElementById("id").value;
+                var person_mobile = document.getElementById("mobile").value;
                 var person_city= document.getElementById("city").value;
-                var number_card= document.getElementById("numberCard").value.indexOf(2);
-                var Three_Number_Card= document.getElementById("ThreeNumberCard").value.indexOf(3);
-                var card_validity = document.getElementById("cardValidity").value.indexOf("/");
+                var number_card= document.getElementById("numberCard").value;
+                var Three_Number_Card= document.getElementById("ThreeNumberCard").value;
+                var card_validity = document.getElementById("cardValidity");
                 var Entry_date = document.getElementById("EntryDate").value;
                 var Release_date = document.getElementById("ReleaseDate").value;
 
                 class clsperson {
-                constructor(firstName, lastName, celephone) {
-                this.firstName = firstName;
-                this.lastName = lastName;
-                this.mobile=mobile;
+                constructor(firstName, lastName, mobile) {
+                    this.firstName = firstName;
+                    this.lastName = lastName;
+                    this.mobile=mobile;
             }
         }
 
