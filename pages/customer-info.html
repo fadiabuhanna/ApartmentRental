@@ -39,9 +39,9 @@
            <input type="text"  class="form-control-label" name="firstName" id="firstName">
            <script type="text/javascript" defer>
             async function main(){
-                const data =await fetch('/userinfo').then(res=>res.json());
+                const data =await fetch('/userinfoo').then(res=>res.json());
                 document.getElementById("firstName").value = data.firstName || "";
-                document.getElementById("lastName").value = data.lastName || "";
+               
                 
         
             }
