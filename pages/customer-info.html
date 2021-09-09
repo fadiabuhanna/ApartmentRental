@@ -35,8 +35,15 @@
               </tr>
             </table>
            -->
-           <input type="text"  name="firstName" id="firstName">
-           
+           <input type="text"   name="firstName" id="firstName">
+           <script>
+            async function main(){
+                const data =await fetch('/userinfoo').then(res=>res.json());
+                document.getElementById("firstName").value = data.firstName || "";                
+        
+            }
+            main();
+            </script>
             
         <table id="t1">
             <caption>Customer Table</caption>
