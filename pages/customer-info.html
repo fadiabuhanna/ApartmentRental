@@ -18,44 +18,17 @@
 	
 	<form method="POST" action="/admin/customer-info">
 
-        <style>
-            table, th, td {
-              border:1px solid black;
+        <script>
+             var tblClient = document.getElementById("tblClient");
+            for (var i = 0; i < 5; i++) {
+                var tr = document.createElement("tr");
+                tblClient.appendChild(tr);
+                tr.appendChild(document.createElement("td").appendChild(document.createTextNode(persons[i].firstName)));
+                tr.appendChild(document.createElement("td").appendChild(document.createTextNode(persons[i].lastName)));
+                tr.appendChild(document.createElement("td").appendChild(document.createTextNode(persons[i].celephone)));
+
             }
-            </style>
-            
-                <!-- < 
-            <h2>TD elements define table cells</h2>
-            
-            <table style="width:100%">
-              <tr>
-                <td>firstName</td>
-                <td>lastName</td>
-                <td>mobile</td>
-              </tr>
-            </table>
-           -->
-           <input type="text"   name="firstName" id="firstName">
-           
-            
-        <table id="t1">
-            <caption>Customer Table</caption>
-            <colgroup>
-                <col span="2" class="c2">
-                <col>
-                <col class="c1">
-            </colgroup>
-            <thead>
-                <tr>
-                    <th>first_name</th>
-                    <th>last_name</th>
-                    <th>person_mobile</th>
-                </tr>
-            </thead>
-            <tbody id="insertionPoint">
-              
-            </tbody>
-        </table>
+        </script>
 
 </body>
 

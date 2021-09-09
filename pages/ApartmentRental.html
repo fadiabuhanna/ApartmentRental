@@ -255,7 +255,15 @@
                     alert("release date is error");
                     return false;
                 }
-                
+                /*******************************/
+                var persons = [];
+                var lenPersons = [];
+                var Person = new clsperson(document.getElementById("firstName").value,
+                document.getElementById("lastName").value, document.getElementById("mobile").value);
+
+                persons.push(Person);
+                lenPersons[1] = persons.length;
+                /*******************************/
                 alert("The data is saved");
                 
                 return true;
