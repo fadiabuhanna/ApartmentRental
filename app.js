@@ -11,7 +11,6 @@ const { read } = require('fs');
 const UserModel = require('./models/User');
 const accountRouter = require('./routes/account');
 const accountAdmin = require('./routes/admin');
-const accountcustomerInfo = require('./routes/customer-info');
 
 /*mongoose.connect('mongodb://localhost:27017', {   
 
@@ -72,7 +71,6 @@ app.use(express.json());
 app.use("/assets", express.static("public"))
 app.use("/account", accountRouter);
 app.use("/admin", accountAdmin); 
-app.use("/customer-info", accountcustomerInfo);
 
 app.get('/userinfo',async (req,res)=>{
     const user = await UserModel.findById(req.session.user._id).exec()

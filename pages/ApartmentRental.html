@@ -255,35 +255,7 @@
                     alert("release date is error");
                     return false;
                 }
-                /*******************************/
-                var persons = [];
 
-                function addClient() {
-                var Person = new clsperson(document.getElementById("firstName").value,
-                    document.getElementById("lastName").value, document.getElementById("mobile").value);
-
-                persons.push(Person);
-                }
-
-                function viewClients() {
-                var tblClient = document.getElementById('tblClient');
-                for (var i = 0; i < persons.length; i++) {
-                
-                    var person = persons[i];
-                    var row = tblClient.insertRow();
-
-                    for (var key in person) {
-                    if (person.hasOwnProperty(key)) {
-                        var cell = row.insertCell();
-                        cell.textContent = person[key]
-                    }
-                    }
-
-                }
-                }
-
-                
-                /*******************************/
                 alert("The data is saved");
                 
                 return true;
@@ -365,26 +337,6 @@
     }
     main();
     </script>
-
-        <h2>add client into a table</h2>
-        <table>
-        <tr>
-            <td><input id="firstName" type="text" /></td>
-            <td><input id="lastName" type="text" /></td>
-            <td><input id="mobile" type="text" /></td>
-            <td><input id="addClient" type="button" value="add" onclick="addClient()" /></td>
-            <td><input id="viewClient" type="button" value="show" onclick="viewClients()" /></td>
-
-
-        </tr>
-        </table>
-        <table id="tblClient">
-        <tr>
-            <th><input type="text" value="first name" /></th>
-            <th><input type="text" value="last name" /></th>
-            <th><input type="text" value="mobile" /></th>
-        </tr>
-        </table>
 </body>
 
 </html>
