@@ -40,10 +40,7 @@ router.get("/register", (req, res) => {
 	
 });
 
-router.get("/customer-info", (req, res) => {
-	res.sendFile(path.resolve('pages/customer-info.html'));
 
-});
 
 
 
