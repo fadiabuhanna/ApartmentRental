@@ -113,16 +113,6 @@ app.post("/add-apartment",async (req,res)=>{
     res.redirect("/");
 })
 
-
-app.get('/userinfoo',async (req,res)=>{
-    const user = await UserModel.findById(req.session.user._id).exec()
-    res.send({
-        firstName:user.firstName,
-
-
-    })
-})
-
 app.get("/", (req, res) => res.sendFile(path.resolve("pages/index.html")))
 app.use("/", (req, res) => res.sendStatus(404));
 
