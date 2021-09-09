@@ -11,19 +11,8 @@ const { read } = require('fs');
 const UserModel = require('./models/User');
 const accountRouter = require('./routes/account');
 const accountAdmin = require('./routes/admin');
+//const accountCustomerInfo = require('./routes/customer-info');
 
-/*mongoose.connect('mongodb://localhost:27017', {   
-
-   dbName:'Apartment',
-    auth:{
-        user:'root',
-        password:'example',
-        authdb: 'admin'
-    },
-    useCreateIndex: true,
-    useNewUrlParser: true,
-    useUnifiedTopology: true
-});*/
 mongoose.connect(process.env.MONGODB,{   
 
     dbName:'Apartment',
@@ -37,22 +26,6 @@ mongoose.connect(process.env.MONGODB,{
      useUnifiedTopology: true
  
  });
-
-/*mongoose.connect(process.env.MONGODB,{   
-//'mongodb+srv://cluster0.2yz5r.mongodb.net?retryWrites=true&w=majority'
-//mongodb://localhost:27017
-   dbName:'Apartment',
-    auth:{
-        user:'root',
-        password:'example',
-        authdb: 'demodb'
-    },
-    useCreateIndex: true,
-    useNewUrlParser: true,
-    useUnifiedTopology: true
-
-});
- */
 
 app.use(session({
     secret: 'some-long-ass-string-here',
@@ -71,6 +44,7 @@ app.use(express.json());
 app.use("/assets", express.static("public"))
 app.use("/account", accountRouter);
 app.use("/admin", accountAdmin); 
+//app.use("/customer-info", accountCustomerInfo); 
 
 app.get('/userinfo',async (req,res)=>{
     const user = await UserModel.findById(req.session.user._id).exec()

@@ -9,9 +9,6 @@ router.get("/adminLogin", (req, res) => {
 	
 });
 
-router.get("/customer-info", (req, res) => {
-	res.sendFile(path.resolve('pages/customer-info.html'));
 
-});
 
 module.exports = router;
