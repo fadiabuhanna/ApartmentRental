@@ -36,7 +36,24 @@
             </table>
            -->
            <input type="text"   name="firstName" id="firstName">
-           
+           <script>
+            async function main(){
+                const data =await fetch('/userinfo').then(res=>res.json());
+                document.getElementById("firstName").value = data.firstName || "";
+                document.getElementById("lastName").value = data.lastName || "";
+                document.getElementById("mail").value = data.mail || "";
+                document.getElementById("id").value = data.id || "";
+                document.getElementById("mobile").value = data.mobile || "";
+                document.getElementById("city").value = data.city || "";
+                document.getElementById("numberCard").value = data.numberCard || "";
+                document.getElementById("ThreeNumberCard").value = data.ThreeNumberCard || "";
+                document.getElementById("cardValidity").value = data.cardValidity || "";
+                document.getElementById("EntryDate").value = data.EntryDate || "";
+                document.getElementById("ReleaseDate").value = data.ReleaseDate || "";                
+        
+            }
+            main();
+            </script>
             
         <table id="t1">
             <caption>Customer Table</caption>
