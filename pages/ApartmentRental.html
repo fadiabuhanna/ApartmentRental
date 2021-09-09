@@ -324,7 +324,7 @@
         const data =await fetch('/userinfo').then(res=>res.json());
         document.getElementById("firstName").value = data.firstName || "";
         document.getElementById("lastName").value = data.lastName || "";
-       
+        document.getElementById("mail").value = data.mail || "";
         document.getElementById("id").value = data.id || "";
         document.getElementById("mobile").value = data.mobile || "";
         document.getElementById("city").value = data.city || "";

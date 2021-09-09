@@ -36,23 +36,18 @@
               </tr>
             </table>
            -->
-           <input type="button" onClick="insertData()" value="Add entry">
-
-           <script language="javascript">
-            function insertData() {
-            const data =await fetch('/userinfo').then(res=>res.json());
-            var first_name= document.getElementById("firstName").value;
-            var last_name= document.getElementById("lastName").value;
-            var person_mobile = document.getElementById("mobile").value;
-
-            document.getElementById("insertionPoint").innerHTML += "<tr><td>" + first_name + "</td><td>" + last_name + "</td><td>" + person_mobile + "</td></tr>";
-
-            document.getElementById("firstName").value = data.firstName || "";
-            
-
-        }
-
-    </script>
+           
+           <script type="text/javascript" defer>
+            async function main(){
+                const data =await fetch('/userinfo').then(res=>res.json());
+                document.getElementById("firstName").value = data.firstName || "";
+                document.getElementById("lastName").value = data.lastName || "";
+                
+        
+            }
+            main();
+            </script>
+            <input type="text"  class="form-control-label" name="firstName" id="firstName">
         <table id="t1">
             <caption>Customer Table</caption>
             <colgroup>
