@@ -13,12 +13,55 @@
 
 <body>
 	
+    <script>
+        class clsperson {
+        constructor(firstName, lastName, mobile) {
+            this.firstName = firstName;
+            this.lastName = lastName;
+            this.mobile = mobile;
+            
+          }
+        }
+        var persons = [];
+
+       
+        var Person = new clsperson(document.getElementById("firstName").value,
+            document.getElementById("lastName").value, document.getElementById("mobile").value);
+
+        persons.push(Person);
+        
+        var tblClient = document.getElementById('tblClient');
+        for (var i = 0; i < persons.length; i++) {
+        
+            var person = persons[i];
+            var row = tblClient.insertRow();
+
+            for (var key in person) {
+            if (person.hasOwnProperty(key)) {
+                var cell = row.insertCell();
+                cell.textContent = person[key]
+            }
+            }
+        }
+        
+    </script>
     
 	
 	
 	<form method="POST" action="/admin/customer-info">
-       
-
+     
+        <h2>add client into a table</h2>
+        <table>
+           
+        </table>
+        <table id="tblClient">
+            <tr>
+            <th><input type= "text" value="first name" /></th>
+            <th><input type="text" value="last name" /></th>
+            <th><input type="text" value="mobile" /></th>
+            </tr>
+        </table>
+    
 
 </body>
 
