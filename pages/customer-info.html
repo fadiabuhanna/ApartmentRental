@@ -16,54 +16,6 @@
 
     <form method="POST" action="/admin/customer-info">
 
-        <script>
-            function validate() {
-
-                var first_name = document.getElementById("firstName").value;
-                var last_name = document.getElementById("lastName").value;
-                var person_mail = document.getElementById("mail").value;
-                var person_id = document.getElementById("id").value;
-                var person_mobile = document.getElementById("mobile").value;
-                var person_city = document.getElementById("city").value;
-                var number_card = document.getElementById("numberCard").value;
-                var Three_Number_Card = document.getElementById("ThreeNumberCard").value;
-                var card_validity = document.getElementById("cardValidity");
-                var Entry_date = document.getElementById("EntryDate").value;
-                var Release_date = document.getElementById("ReleaseDate").value;
-
-                class clsperson {
-                    constructor(firstName, lastName, mobile) {
-                        this.firstName = firstName;
-                        this.lastName = lastName;
-                        this.mobile = mobile;
-                    }
-                }
-
-                var persons = [];
-
-                function addClient() {
-                    var Person = new clsperson(first_name, last_name, person_mobile);
-
-                    persons.push(Person);
-                    var tblClient = document.getElementById('tblClient');
-                    for (var i = 0; i < persons.length; i++) {
-
-                        var person = persons[i];
-                        var row = tblClient.insertRow();
-
-                        for (var key in person) {
-                            if (person.hasOwnProperty(key)) {
-                                var cell = row.insertCell();
-                                cell.textContent = person[key]
-                            }
-                        }
-
-                    }
-
-                }
-            }
-        </script>
-
     </form>
     <hr>
     <a href="/account/logout" class="form-label">logout</a>
@@ -71,17 +23,6 @@
     <script type="text/javascript" defer>
         async function main() {
             const data = await fetch('/userinfo').then(res => res.json());
-            // document.getElementById("firstName").value = data.firstName || "";
-            // document.getElementById("lastName").value = data.lastName || "";
-            // document.getElementById("mail").value = data.mail || "";
-            // document.getElementById("id").value = data.id || "";
-            // document.getElementById("mobile").value = data.mobile || "";
-            // document.getElementById("city").value = data.city || "";
-            // document.getElementById("numberCard").value = data.numberCard || "";
-            // document.getElementById("ThreeNumberCard").value = data.ThreeNumberCard || "";
-            // document.getElementById("cardValidity").value = data.cardValidity || "";
-            // document.getElementById("EntryDate").value = data.EntryDate || "";
-            // document.getElementById("ReleaseDate").value = data.ReleaseDate || "";
 
             const users = await fetch('/users').then(res => res.json());
             const headers = Object.keys(users[0]).map(key => {
