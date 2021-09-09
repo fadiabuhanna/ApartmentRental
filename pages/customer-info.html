@@ -16,61 +16,86 @@
 
     <form method="POST" action="/admin/customer-info">
      
-        <h2>add client into a table</h2>
-        <table>
-            <tr>
-                <td><input id="addClient" type="button" value="add" onclick="addClient()" /></td>
-          
-          
-              </tr>
-        </table>
-        <table id="tblClient">
-            <tr>
-            <th><input type= "text" value="first name" /></th>
-            <th><input type="text" value="last name" /></th>
-            <th><input type="text" value="mobile" /></th>
-            </tr>
-        </table>
-    
-    
-	
-    <script>
-        class clsperson {
-        constructor(firstName, lastName, mobile) {
-            this.firstName = firstName;
-            this.lastName = lastName;
-            this.mobile = mobile;
-            
-          }
+        <script>
+            function validate() {
+
+                var first_name= document.getElementById("firstName").value;
+                var last_name= document.getElementById("lastName").value;
+             	var person_mail = document.getElementById("mail").value.indexOf("@gmail.com");
+             	var person_id = document.getElementById("id").value.indexOf(9);
+                var person_mobile = document.getElementById("mobile").value.indexOf(9);
+                var person_city= document.getElementById("city").value;
+                var number_card= document.getElementById("numberCard").value.indexOf(2);
+                var Three_Number_Card= document.getElementById("ThreeNumberCard").value.indexOf(3);
+                var card_validity = document.getElementById("cardValidity").value.indexOf("/");
+                var Entry_date = document.getElementById("EntryDate").value;
+                var Release_date = document.getElementById("ReleaseDate").value;
+
+                class clsperson {
+                constructor(firstName, lastName, celephone) {
+                this.firstName = firstName;
+                this.lastName = lastName;
+                this.mobile=mobile;
+            }
         }
+
         var persons = [];
 
-        function addClient() {
-            const data =await fetch('/userinfo').then(res=>res.json());
-            
-        var Person = new clsperson(document.getElementById("firstName").value,
-            document.getElementById("lastName").value, document.getElementById("mobile").value);
+            function addClient() {
+                var Person = new clsperson(first_name,last_name,person_mobile);
 
-        persons.push(Person);
+                persons.push(Person);
+                var tblClient = document.getElementById('tblClient');
+                for (var i = 0; i < persons.length; i++) {
+                
+                    var person = persons[i];
+                    var row = tblClient.insertRow();
 
-        var tblClient = document.getElementById('tblClient');
-        for (var i = 0; i < persons.length; i++) {
+                    for (var key in person) {
+                    if (person.hasOwnProperty(key)) {
+                        var cell = row.insertCell();
+                        cell.textContent = person[key]
+                    }
+                    }
+
+                }
+
+            }
+        } 
+        </script>
+       
+    </form>
+    <hr>
+    <a href="/account/logout" class="form-label">logout</a>
+    
+    <script type="text/javascript" defer>
+    async function main(){
+        const data =await fetch('/userinfo').then(res=>res.json());
+        document.getElementById("firstName").value = data.firstName || "";
+        document.getElementById("lastName").value = data.lastName || "";
+        document.getElementById("mail").value = data.mail || "";
+        document.getElementById("id").value = data.id || "";
+        document.getElementById("mobile").value = data.mobile || "";
+        document.getElementById("city").value = data.city || "";
+        document.getElementById("numberCard").value = data.numberCard || "";
+        document.getElementById("ThreeNumberCard").value = data.ThreeNumberCard || "";
+        document.getElementById("cardValidity").value = data.cardValidity || "";
+        document.getElementById("EntryDate").value = data.EntryDate || "";
+        document.getElementById("ReleaseDate").value = data.ReleaseDate || "";
+
         
-            var person = persons[i];
-            var row = tblClient.insertRow();
-
-            for (var key in person) {
-            if (person.hasOwnProperty(key)) {
-                var cell = row.insertCell();
-                cell.textContent = person[key]
-            }
-            }
-        }
     }
-        
+    main();
     </script>
-	
-</form>
+    <td><input id="addClient" type="button" value="add" onclick="addClient()" /></td>
+    </table>
+    <table id="tblClient">
+    <tr>
+        <th><input type="text" value="first name" /></th>
+        <th><input type="text" value="last name" /></th>
+        <th><input type="text" value="mobile" /></th>
+    </tr>
+    </table>
 
 </body>
 
