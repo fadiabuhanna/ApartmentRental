@@ -24,12 +24,12 @@
         }
         var persons = [];
 
-       
+        function addClient() {
         var Person = new clsperson(document.getElementById("firstName").value,
             document.getElementById("lastName").value, document.getElementById("mobile").value);
 
         persons.push(Person);
-        
+
         var tblClient = document.getElementById('tblClient');
         for (var i = 0; i < persons.length; i++) {
         
@@ -43,6 +43,7 @@
             }
             }
         }
+    }
         
     </script>
     
@@ -52,7 +53,11 @@
      
         <h2>add client into a table</h2>
         <table>
-           
+            <tr>
+                <td><input id="addClient" type="button" value="add" onclick="addClient()" /></td>
+          
+          
+              </tr>
         </table>
         <table id="tblClient">
             <tr>
