@@ -14,18 +14,12 @@
 <body>
 
     <style>
-        body {
-         background: #97c3d8;
-         font-family: 'Roboto', sans-serif;
-        }
-
         .form-label {
             font-size: 20px;
-            color:rgb(60, 82, 81);
+            color:lightseagreen;
             font-weight: bold;
             letter-spacing: 1px;	
         }
-        
         table {
             width: 300px;
             border-collapse: collapse;
@@ -72,12 +66,11 @@
                     tr.append(td)
                     
                 }
-
+                
                 return tr;
             });
             document.querySelector("thead").append(thead)
-            document.querySelector("tbody").append(...rows)
-
+            document.querySelector("tbody").append(rows[1],rows[2],rows[4],rows[5],rows[6],rows[7],rows[8],rows[9],rows[10],rows[11])
         }
         main();
     </script>
