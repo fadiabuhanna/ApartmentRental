@@ -177,9 +177,6 @@
              	var person_id = document.getElementById("id").value.indexOf(9);
                 var person_mobile = document.getElementById("mobile").value.indexOf(9);
                 var person_city= document.getElementById("city").value;
-                var number_card= document.getElementById("numberCard").value.indexOf(2);
-                var Three_Number_Card= document.getElementById("ThreeNumberCard").value.indexOf(3);
-                var card_validity = document.getElementById("cardValidity").value.indexOf("/");
                 var Entry_date = document.getElementById("EntryDate").value;
                 var Release_date = document.getElementById("ReleaseDate").value;
                 if(first_name == null || first_name == "" || first_name == " " || last_name == null || last_name == "" || last_name == " "){
@@ -217,32 +214,6 @@
                 }
                 if(person_city=="" || person_city==null || person_city==" "){
                     alert("city is error");
-                    return false;
-                }
-
-                if(number_card==null || number_card==" " || number_card==""){
-                    alert("car number is error");
-                    return false;
-                }
-                if(number_card == -1){
-                    alert("Not a valid care number");
-                    return false;
-                }
-
-                if(Three_Number_Card==null || Three_Number_Card==" " || Three_Number_Card==""){
-                    alert("card CVC is error");
-                    return false;
-                }
-                if(Three_Number_Card == -1){
-                    alert("Not a valid care CVC");
-                    return false;
-                }
-                if(card_validity==null || card_validity==" " || card_validity==""){
-                    alert("card validity is error");
-                    return false;
-                }
-                if(card_validity==-1){
-                    alert("card validity is error");
                     return false;
                 }
 
@@ -287,21 +258,6 @@
 
 
 
-        <h3>Card details:</h3>
-
-        <div class="form-group">
-			<label class="form-control-label">Card Number</label>
-            <input type="number" class="form-control-label" name="numberCard" id="numberCard">
-            <br>
-            <label class="form-control-label">Card CVC</label>
-            <input type="number" class="form-control-label" name="ThreeNumberCard" id="ThreeNumberCard" >
-            <br>
-            <label class="form-control-label">Card validity</label>
-            <input type="text" class="form-control-label" name="cardValidity" id="cardValidity">
-		</div>
-
-
-
         <h3>Rental dates:</h3>
 
         <label  class="form-control-label">Entry dates:</label>
@@ -328,9 +284,6 @@
         document.getElementById("id").value = data.id || "";
         document.getElementById("mobile").value = data.mobile || "";
         document.getElementById("city").value = data.city || "";
-        document.getElementById("numberCard").value = data.numberCard || "";
-        document.getElementById("ThreeNumberCard").value = data.ThreeNumberCard || "";
-        document.getElementById("cardValidity").value = data.cardValidity || "";
         document.getElementById("EntryDate").value = data.EntryDate || "";
         document.getElementById("ReleaseDate").value = data.ReleaseDate || "";
 

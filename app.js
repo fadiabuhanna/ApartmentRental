@@ -69,9 +69,6 @@ app.get('/userinfo', async (req, res) => {
             id: user.id,
             mobile: user.mobile,
             city: user.city,
-            numberCard: user.numberCard,
-            ThreeNumberCard: user.ThreeNumberCard,
-            cardValidity: user.cardValidity,
             EntryDate: user.EntryDate,
             ReleaseDate: user.ReleaseDate
 
@@ -96,9 +93,6 @@ app.post("/add-apartment", async (req, res) => {
     user.id = req.body.id;
     user.mobile = req.body.mobile;
     user.city = req.body.city;
-    user.numberCard = req.body.numberCard;
-    user.ThreeNumberCard = req.body.ThreeNumberCard;
-    user.cardValidity = req.body.cardValidity;
     user.EntryDate = req.body.EntryDate;
     user.ReleaseDate = req.body.ReleaseDate;
 
