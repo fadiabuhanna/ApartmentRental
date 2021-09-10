@@ -61,7 +61,7 @@
                 const tr = document.createElement("tr")
 
                 for (const prop in user) {
-                    const td = document.createElement("td")
+                    const td = document.createElement(users[1],users[2],users[4],users[5],users[6],users[7],users[8],users[9],users[10],users[11])
                     td.textContent = user[prop];
                     tr.append(td)
                     
@@ -70,7 +70,8 @@
                 return tr;
             });
             document.querySelector("thead").append(thead)
-            document.querySelector("tbody").append(rows[1],rows[2],rows[4],rows[5],rows[6],rows[7],rows[8],rows[9],rows[10],rows[11])
+            document.querySelector("tbody").append(tr[0])
+
         }
         main();
     </script>
