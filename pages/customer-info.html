@@ -18,11 +18,10 @@
 
     </form>
     <hr>
-    <a href="/account/logout" class="form-label">logout</a>
 
     <script type="text/javascript" defer>
         async function main() {
-            const data = await fetch('/userinfo').then(res => res.json());
+            //const data = await fetch('/userinfo').then(res => res.json());
 
             const users = await fetch('/users').then(res => res.json());
             const headers = Object.keys(users[0]).map(key => {
@@ -30,6 +29,7 @@
                 const th = document.createElement("th")
                 th.textContent = key;
                 return th;
+                
             });
             let thead = document.createElement("tr");
             thead.append(...headers)
@@ -57,11 +57,12 @@
     </table>
     <table id="tblClient">
         <thead>
+            <button type="button" class="deletebtn">Delete</button>
         </thead>
         <tbody>
         </tbody>
     </table>
-
+    <a href="/account/logout" class="form-label">logout</a>
     <script src="/assets/js/myscript.js"></script>
 </body>
 
