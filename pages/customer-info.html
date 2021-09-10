@@ -25,9 +25,10 @@
 
             const users = await fetch('/users').then(res => res.json());
             const headers = Object.keys(users[0]).map(key => {
-                console.log(key)
+                //console.log(key)
                 const th = document.createElement("th")
                 th.textContent = key;
+               
                 return th;
                 
             });
@@ -42,6 +43,7 @@
                     const td = document.createElement("td")
                     td.textContent = user[prop];
                     tr.append(td)
+                    
                 }
 
                 return tr;
@@ -49,18 +51,23 @@
             document.querySelector("thead").append(thead)
             document.querySelector("tbody").append(...rows)
 
-
         }
         main();
+    </script>
+
+    <script>
+        async function test() {
+            
+        }
+
     </script>
     
     </table>
     <table id="tblClient">
         <thead>
-            <button type="button" >Delete</button>
+            <button type="button" class="deletebtn">Delete</button>
         </thead>
         <tbody>
-            <button type="button" >Delete2</button>
         </tbody>
     </table>
     <a href="/account/logout" class="form-label">logout</a>
