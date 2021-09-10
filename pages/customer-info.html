@@ -42,7 +42,8 @@
                 for (const prop in user) {
                     const td = document.createElement("td")
                     td.textContent = user[prop];
-                    tr.append(td)
+                    td.remove();
+                    //tr.append(td)
                     
                 }
 
