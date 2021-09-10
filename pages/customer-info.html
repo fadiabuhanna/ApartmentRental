@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 
-
+    
 
 <head>
     <meta charset="UTF-8">
@@ -12,6 +12,20 @@
 </head>
 
 <body>
+
+    <style>
+        table {
+            width: 300px;
+            border-collapse: collapse;
+        }
+        table, th, td {
+            border: 1px solid black;
+        }
+        th, td {
+            padding: 10px;
+            text-align: left;
+        }
+    </style>
 
 
     <form method="POST" action="/admin/customer-info">
@@ -67,6 +81,7 @@
         <thead>
             <button type="button" class="deletebtn">Delete</button>
             <tr>
+                <th>_id</th>
                 <th>username</th>
                 <th>password</th>
                 <th>__v</th>
@@ -74,7 +89,7 @@
                 <th>ReleaseDate</th>
                 <th>city</th>
                 <th>firstName</th>
-                <th>id</th>
+                <th>idPerson</th>
                 <th>lastName</th>
                 <th>mail</th>
                 <th>mobile</th>
