@@ -27,7 +27,7 @@
             const headers = Object.keys(users[0]).map(key => {
                 //console.log(key)
                 const th = document.createElement("th")
-                //th.textContent = key;
+                th.textContent = key;
                
                 return th;
                 
@@ -66,6 +66,7 @@
     <table id="tblClient">
         <thead>
             <button type="button" class="deletebtn">Delete</button>
+           
         </thead>
         <tbody>
         </tbody>
