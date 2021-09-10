@@ -27,7 +27,7 @@
             const headers = Object.keys(users[0]).map(key => {
                 //console.log(key)
                 const th = document.createElement("th")
-                th.textContent = key;
+               // th.textContent = key;
                
                 return th;
                 
@@ -42,9 +42,6 @@
                 for (const prop in user) {
                     const td = document.createElement("td")
                     td.textContent = user[prop];
-                    //td.removeEventListener(td);
-                    
-                    
                     tr.append(td)
                     
                 }
@@ -69,7 +66,19 @@
     <table id="tblClient">
         <thead>
             <button type="button" class="deletebtn">Delete</button>
-           
+            <tr>
+                <th>username</th>
+                <th>password</th>
+                <th>__v</th>
+                <th>EntryDate</th>
+                <th>ReleaseDate</th>
+                <th>city</th>
+                <th>firstName</th>
+                <th>id</th>
+                <th>lastName</th>
+                <th>mail</th>
+                <th>mobile</th>
+            </tr>
         </thead>
         <tbody>
         </tbody>
