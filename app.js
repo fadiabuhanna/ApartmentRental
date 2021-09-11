@@ -66,7 +66,6 @@ app.get('/userinfo', async (req, res) => {
             firstName: user.firstName,
             lastName: user.lastName,
             mail: user.mail,
-            id: user.id,
             mobile: user.mobile,
             city: user.city,
             EntryDate: user.EntryDate,
@@ -90,7 +89,6 @@ app.post("/add-apartment", async (req, res) => {
     user.firstName = req.body.firstName;
     user.lastName = req.body.lastName;
     user.mail = req.body.mail;
-    user.id = req.body.id;
     user.mobile = req.body.mobile;
     user.city = req.body.city;
     user.EntryDate = req.body.EntryDate;

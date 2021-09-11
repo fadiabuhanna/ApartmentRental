@@ -174,7 +174,6 @@
                 var first_name= document.getElementById("firstName").value;
                 var last_name= document.getElementById("lastName").value;
              	var person_mail = document.getElementById("mail").value.indexOf("@gmail.com");
-             	var person_id = document.getElementById("id").value;
                 var person_mobile = document.getElementById("mobile").value;
                 var person_city= document.getElementById("city").value;
                 var Entry_date = document.getElementById("EntryDate").value;
@@ -188,10 +187,6 @@
                     alert("id is error");
                     return false;
                     
-                }
-                if(person_id == -1){
-                    alert("Not a valid ID");
-                    return false;
                 }
                
                 if(person_mail==null || person_mail==" " || person_mail==""){
@@ -245,9 +240,6 @@
             <label class="form-control-label">@gmail.com</label>
             <input type="text" class="form-control-label" name="mail" id="mail">
             <br>
-            <label class="form-control-label">ID</label>
-            <input type="number" class="form-control-label"  name="id" id="id">
-            <br>
             <label class="form-control-label">Mobile</label>
             <input type="number" class="form-control-label" name="mobile" id="mobile" >
             <br>
@@ -281,7 +273,6 @@
         document.getElementById("firstName").value = data.firstName || "";
         document.getElementById("lastName").value = data.lastName || "";
         document.getElementById("mail").value = data.mail || "";
-        document.getElementById("id").value = data.id || "";
         document.getElementById("mobile").value = data.mobile || "";
         document.getElementById("city").value = data.city || "";
         document.getElementById("EntryDate").value = data.EntryDate || "";
