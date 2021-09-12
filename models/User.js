@@ -11,7 +11,6 @@ const UserSchema = new mongoose.Schema({
     firstName:{type:String},
     lastName:{type: String },
     mail:{type: String },
-    id:{type: Number },
     mobile:{type: Number},
     city:{type: String },
     numberCard:{type: Number},
@@ -19,19 +18,8 @@ const UserSchema = new mongoose.Schema({
     cardValidity:{type: String },
     EntryDate:{type: String },
     ReleaseDate:{type: String}    
-
-
-    /*username :{
-        type: String,
-        required: true,
-        unique: true
-    },
-    password:{type: String,required:true },
-    
-    created:{type: Date, default: Date.now}*/
     
     
 });
 module.exports = mongoose.model('User', UserSchema);
-//module.exports = User;
 
