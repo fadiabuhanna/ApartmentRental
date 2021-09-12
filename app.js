@@ -2,7 +2,6 @@ const express = require('express');
 const path = require('path');
 const dotenv = require('dotenv');
 dotenv.config();
-/*const cookieRouter = require("cookie-parser");*/
 const cookieParser = require('cookie-parser');
 const app = express();
 const session = require("express-session");
@@ -23,7 +22,6 @@ const { read } = require('fs');
 const UserModel = require('./models/User');
 const accountRouter = require('./routes/account');
 const accountAdmin = require('./routes/admin');
-//const accountCustomerInfo = require('./routes/customer-info');
 
 mongoose.connect(process.env.MONGODB, {
 
@@ -57,7 +55,6 @@ app.use(express.json());
 app.use("/assets", express.static("public"))
 app.use("/account", accountRouter);
 app.use("/admin", accountAdmin);
-//app.use("/customer-info", accountCustomerInfo); 
 
 app.get('/userinfo', async (req, res) => {
     try {
@@ -95,7 +92,6 @@ app.post("/add-apartment", async (req, res) => {
     user.ReleaseDate = req.body.ReleaseDate;
 
     await user.save()
-    //console.log({data});
     res.redirect("/");
 })
 
