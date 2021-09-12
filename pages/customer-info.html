@@ -45,7 +45,7 @@
             //const data = await fetch('/userinfo').then(res => res.json());
 
             const users = await fetch('/users').then(res => res.json());
-            const headers = Object.keys(users[1]).map(key => {
+            const headers = Object.keys(users[0]).map(key => {
                 //console.log(key)
                 const th = document.createElement("th")
                // th.textContent = key;
