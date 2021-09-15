@@ -173,7 +173,7 @@
 
                 var first_name= document.getElementById("firstName").value;
                 var last_name= document.getElementById("lastName").value;
-             	var person_mail = document.getElementById("mail").value.indexOf("@gmail.com" || "@hotmail.com");
+             	var person_mail = document.getElementById("mail").value;
                 var person_mobile = document.getElementById("mobile").value;
                 var person_city= document.getElementById("city").value;
                 var Entry_date = document.getElementById("EntryDate").value;
@@ -239,8 +239,9 @@
             <label class="form-control-label">Last Name</label>
             <input type="text"  class="form-control-label"name="lastName" id="lastName">
             <br>
+            
             <label class="form-control-label">@Email</label>
-            <input type="text" class="form-control-label" name="mail" id="mail">
+            <input type="email" class="form-control-label" name="mail" id="mail">
             <br>
             <label class="form-control-label">Mobile</label>
             <input type="number" class="form-control-label" name="mobile" id="mobile" >
