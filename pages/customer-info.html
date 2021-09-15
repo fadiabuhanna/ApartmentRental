@@ -46,9 +46,7 @@
 
             const users = await fetch('/users').then(res => res.json());
             const headers = Object.keys(users[0]).map(key => {
-                //console.log(key)
                 const th = document.createElement("th")
-               // th.textContent = key;
                
                 return th;
                 
@@ -64,8 +62,6 @@
                     const td = document.createElement("td")
                     td.textContent = user[prop];
                     tr.append(td)
-                    
-                    
                 }
                 
                 return tr;
@@ -100,11 +96,9 @@
                 <th>lastName</th>
                 <th>mail</th>
                 <th>mobile</th>
-                <th>delete person</th>
             </tr>
         </thead>
         <tbody>
-            deleteeee
         </tbody>
     </table>
     <a href="/account/logout" class="form-label">logout</a>
