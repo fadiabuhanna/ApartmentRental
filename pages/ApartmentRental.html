@@ -178,6 +178,7 @@
                 var person_city= document.getElementById("city").value;
                 var Entry_date = document.getElementById("EntryDate").value;
                 var Release_date = document.getElementById("ReleaseDate").value;
+                
                 if(first_name == null || first_name == "" || first_name == " " || last_name == null || last_name == "" || last_name == " "){
                     alert("first name OR last name is error");
                     return false;
@@ -246,9 +247,6 @@
             <label class="form-control-label">City</label>
             <input type="text" class="form-control-label" name="city" id="city">
             <h5>city: In which city the apartment is located</h5>
-            <br>
-            <label class="form-control-label">City</label>
-            <input type="text" class="form-control-label" name="city" id="city">
 		</div>
 
 
@@ -268,7 +266,7 @@
         <div><button type="submit" class="btn btn-outline-primary" onclick="return validate();">save data</button></div>
     </form>
     <hr>
-    <a href="/account/logout" class="form-label">logout</a>
+    <a href="/account/logout" class="form-label" onclick="return validate();"></a>>logout</a>
     
     <script type="text/javascript" defer>
     async function main(){
