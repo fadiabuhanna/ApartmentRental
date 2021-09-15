@@ -187,13 +187,13 @@
                 if(person_id=="" || person_id==null || person_id==" "){
                     alert("id is error");
                     return false;
-                    
                 }
                
                 if(person_mail==null || person_mail==" " || person_mail==""){
                     alert("mail is error");
                     return false;
                 }
+
                 if(person_mail == -1){
                     alert("Not a valid e-mail!");
                     return false;
@@ -208,6 +208,7 @@
                     alert("Not a valid mobile");
                     return false;
                 }
+                
                 if(person_city=="" || person_city==null || person_city==" "){
                     alert("city is error");
                     return false;
@@ -238,7 +239,7 @@
             <label class="form-control-label">Last Name</label>
             <input type="text"  class="form-control-label"name="lastName" id="lastName">
             <br>
-            <label class="form-control-label">@gmail.com</label>
+            <label class="form-control-label">mail</label>
             <input type="text" class="form-control-label" name="mail" id="mail">
             <br>
             <label class="form-control-label">Mobile</label>
